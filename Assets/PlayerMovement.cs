@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float Speed, JumpForce, MaxSpeed;
 
-    protected bool LeftStrafe = false, RightStrafe = false, DoJump = false, InJump = false;
+    protected bool LeftStrafe = false, RightStrafe = false, DoJump = false;
     // Start is called before the first frame update
     void Start()
     {
