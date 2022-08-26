@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float Speed, JumpForce, MaxSpeed;
 
-    protected bool LeftStrafe = false, RightStrafe = false, DoJump = false;
+    protected bool LeftStrafe = false, RightStrafe = false, DoJump = false, LookLeft = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,10 +43,20 @@ public class PlayerMovement : MonoBehaviour
         if (RightStrafe)
         {
             rb.AddForce(new Vector2(Speed * 10, 0), ForceMode2D.Force);
+            if (LookLeft)
+            {
+                LookLeft = false;
+                transform.Rotate(new Vector3(180, 0, 180));
+            }
         }
         if (LeftStrafe)
         {
             rb.AddForce(new Vector2(-Speed * 10, 0), ForceMode2D.Force);
+            if (!LookLeft)
+            {
+                LookLeft = true;
+                transform.Rotate(new Vector3(180, 0, 180));
+            }
         }
         if (DoJump)
         {
