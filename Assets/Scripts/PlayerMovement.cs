@@ -14,11 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     protected bool LeftStrafe = false, RightStrafe = false, DoJump = false, LookLeft = false;
 
-    private Animator anim;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,11 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.y != 0)
         {
-            anim.SetBool("isRunning", true);
+            animator.SetBool("IsMoving", true);
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            animator.SetBool("IsMoving", false);
         }
         
         if (rb.velocity.x > MaxSpeed)
@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if (DoJump)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
-        }
+            animator.SetBool("IsJumping", true);
+        } 
     }
 }
