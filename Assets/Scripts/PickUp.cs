@@ -11,6 +11,10 @@ public class PickUp : MonoBehaviour
         {
             CanPickUp = true;
         }
+        else
+        {
+            CanPickUp = false;
+        }
     }
     
     void FixedUpdate(){
