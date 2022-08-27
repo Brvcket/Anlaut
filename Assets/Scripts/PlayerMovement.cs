@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float Speed, JumpForce, MaxSpeed;
 
-    protected bool LeftStrafe = false, RightStrafe = false, DoJump = false, LookLeft = false;
+    protected bool DoJump = false, LookLeft = false;
 
     private Animator animator;
     
@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RightStrafe = Input.GetKey("d");
-        LeftStrafe = Input.GetKey("a");
         DoJump = Input.GetKey("space") && Mathf.Abs(rb.velocity.y) < 0.001 && !DoJump;
         if (Input.GetKeyDown("d") && !DoJump) {aud.Play();}
         else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
@@ -43,9 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.freezeRotation = true;
-        
-        
         if (rb.velocity.y != 0)
         {
             animator.SetBool("IsMoving", true);
@@ -64,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(-MaxSpeed, rb.velocity.y);
         }
         
-        if (RightStrafe)
+        if (Input.GetKey("d"))
         {
             rb.AddForce(new Vector2(Speed * 10, 0), ForceMode2D.Force);
             if (LookLeft)
@@ -73,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.Rotate(new Vector3(180, 0, 180));
             }
         }
-        if (LeftStrafe)
+        if (Input.GetKey("a"))
         {
             rb.AddForce(new Vector2(-Speed * 10, 0), ForceMode2D.Force);
             if (!LookLeft)
