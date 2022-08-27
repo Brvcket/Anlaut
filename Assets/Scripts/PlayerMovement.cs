@@ -1,24 +1,32 @@
 using System;
+using System.Timers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Cryptography;
+using System.Threading;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
+    private AudioSource aud;
+
     public float Speed, JumpForce, MaxSpeed;
 
     protected bool LeftStrafe = false, RightStrafe = false, DoJump = false, LookLeft = false;
 
     private Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        aud = GetComponent<AudioSource>();
+        aud.Stop();
     }
 
     // Update is called once per frame
@@ -27,12 +35,17 @@ public class PlayerMovement : MonoBehaviour
         RightStrafe = Input.GetKey("d");
         LeftStrafe = Input.GetKey("a");
         DoJump = Input.GetKey("space") && Mathf.Abs(rb.velocity.y) < 0.001 && !DoJump;
+        if (Input.GetKeyDown("d") && !DoJump) {aud.Play();}
+        else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
+        if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
+        else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
     }
 
     private void FixedUpdate()
     {
         rb.freezeRotation = true;
-
+        
+        
         if (rb.velocity.y != 0)
         {
             animator.SetBool("IsMoving", true);
