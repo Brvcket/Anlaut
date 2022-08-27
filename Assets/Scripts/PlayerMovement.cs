@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    public float Speed, JumpForce, MaxSpeed, PowerMultiplier;
+    public float Speed, JumpForce, MaxSpeed;
 
     protected bool LeftStrafe = false, RightStrafe = false, DoJump = false, LookLeft = false;
 
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (DoJump)
         {
-            rb.AddForce(new Vector2(0, JumpForce * PowerMultiplier), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
     }
 }

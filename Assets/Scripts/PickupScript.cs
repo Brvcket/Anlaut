@@ -6,7 +6,6 @@ public class pickup_script : MonoBehaviour
 {
     public float PowerMultiplier;
     protected bool CanPickUp = false;
-    protected gameObject Object;
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "pickup")
