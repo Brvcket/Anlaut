@@ -10,13 +10,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    public float Speed, JumpForce, MaxSpeed;
+    public float Speed, JumpForce, MaxSpeed, PowerMultiplier;
 
     protected bool LeftStrafe = false, RightStrafe = false, DoJump = false, LookLeft = false;
+
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.freezeRotation = true;
+
+        if (rb.velocity.y != 0)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
         
         if (rb.velocity.x > MaxSpeed)
         {
@@ -60,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (DoJump)
         {
-            rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, JumpForce * PowerMultiplier), ForceMode2D.Impulse);
         }
     }
 }
