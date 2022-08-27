@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pickup_script : MonoBehaviour
+public class PickUp : MonoBehaviour
 {
-    public float PowerMultiplier;
     protected bool CanPickUp = false;
 
     void OnTriggerEnter2D(Collider2D collision) {
@@ -17,7 +16,7 @@ public class pickup_script : MonoBehaviour
     void FixedUpdate(){
         if (CanPickUp && Input.GetKey("e"))
         {
-            PowerMultiplier += 5;
+            Destroy(GameObject.Find("greenPotion"));
         }    
     }
 }
