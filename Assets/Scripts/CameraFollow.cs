@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 target = new Vector3()
         {
             x = Player.transform.position.x,
-            y = Player.transform.position.y,
+            y = Player.transform.position.y + 1,
             z = Player.transform.position.z - 10,
         };
         Camera.transform.position = Vector3.Lerp(Camera.transform.position, target, Speed * Time.fixedDeltaTime);
