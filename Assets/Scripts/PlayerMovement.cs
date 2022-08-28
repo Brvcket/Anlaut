@@ -127,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
                 animator.SetBool("IsLanding", IsLanding);
                 IsLanding = false;
+                AbleToMove = true;
             }
         }
     }
