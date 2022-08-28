@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float Speed, JumpForce, MaxSpeed;
 
     protected bool DoJump = false, LookLeft = false;
-    protected bool IsJumping = false, IsJumpTurning = false, IsLanding = false, IsDead = false, IsReborn = false, AebleToMove = true; // For animations
+    protected bool IsJumping = false, IsJumpTurning = false, IsLanding = false, IsDead = false, IsReborn = false, AbleToMove = true; // For animations
 
     private Animator animator;
     
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(-MaxSpeed, rb.velocity.y);
         }
         
-        if (Input.GetKey("d") && AebleToMove)
+        if (Input.GetKey("d") && AbleToMove)
         {
             rb.AddForce(new Vector2(Speed * 10, 0), ForceMode2D.Force);
             if (LookLeft)
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.Rotate(new Vector3(180, 0, 180));
             }
         }
-        if (Input.GetKey("a") && AebleToMove)
+        if (Input.GetKey("a") && AbleToMove)
         {
             rb.AddForce(new Vector2(-Speed * 10, 0), ForceMode2D.Force);
             if (!LookLeft)
@@ -86,15 +86,16 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsDead", true);
             animator.SetBool("IsReborn", false);
-            AebleToMove = false;
+            AbleToMove = false;
         }
         if (Input.GetKey("r"))
         {
             animator.SetBool("IsDead", false);
             animator.SetBool("IsReborn", true);
-            AebleToMove = true;
+            AbleToMove = true;
+/*            rb.position = new Vector2(-4.4f, -5);*/
         }
-        if (DoJump)
+        if (DoJump && AbleToMove)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             IsJumping = true;
@@ -117,13 +118,13 @@ public class PlayerMovement : MonoBehaviour
         {
             if (rb.velocity.y > -0.04 && rb.velocity.y <= 0.04)
             {
-                AebleToMove = false;
+                AbleToMove = false;
                 IsJumpTurning = false;
                 IsLanding = true;
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
                 animator.SetBool("IsLanding", IsLanding);
                 IsLanding = false;
-                AebleToMove = true;
+                AbleToMove = true;
             }
         }
     }
