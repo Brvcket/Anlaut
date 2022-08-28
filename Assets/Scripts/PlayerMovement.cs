@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 LookLeft = false;
                 animator.SetBool("IsLanding", IsLanding);
+                animator.SetBool("IsReborn", false);
                 transform.Rotate(new Vector3(180, 0, 180));
             }
         }
@@ -88,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 LookLeft = true;
                 animator.SetBool("IsLanding", IsLanding);
+                animator.SetBool("IsReborn", false);
                 transform.Rotate(new Vector3(180, 0, 180));
             }
         }
@@ -121,13 +123,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (rb.velocity.y > -0.04 && rb.velocity.y <= 0.04)
             {
-                AbleToMove = false;
                 IsJumpTurning = false;
                 IsLanding = true;
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
                 animator.SetBool("IsLanding", IsLanding);
                 IsLanding = false;
-                AbleToMove = true;
             }
         }
     }
