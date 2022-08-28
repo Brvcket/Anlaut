@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float Speed, JumpForce, MaxSpeed;
 
     protected bool DoJump = false, LookLeft = false;
+    protected bool IsJumping = false, IsJumpTurning = false, IsLanding = false; // For animations
 
     private Animator animator;
     
@@ -80,7 +81,28 @@ public class PlayerMovement : MonoBehaviour
         if (DoJump)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
-            animator.SetBool("IsJumping", true);
+            IsJumping = true;
+            IsLanding = false;
+            animator.SetBool("IsJumping", IsJumping);
         } 
+        if (IsJumping)
+        {
+            if (rb.velocity.y < 0.05)
+            {
+                IsJumping = false;
+                IsJumpTurning = true;
+                animator.SetBool("IsJumping", IsJumping);
+                animator.SetBool("IsJumpTurning", IsJumpTurning);
+            }
+        } else if (IsJumpTurning)
+        {
+            if (rb.velocity.y > -0.02)
+            {
+                IsJumpTurning = false;
+                IsLanding = true;
+                animator.SetBool("IsJumpTurning", IsJumpTurning);
+                animator.SetBool("IsLanding", IsLanding);
+            }
+        }
     }
 }

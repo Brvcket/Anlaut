@@ -333,6 +333,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3440869345954834524, guid: 3ef9101442a34124991a19b7eef5c7b2, type: 3}
@@ -396,6 +397,7 @@ PrefabInstance:
       value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ef9101442a34124991a19b7eef5c7b2, type: 3}
 --- !u!1 &264619367
 GameObject:
@@ -1043,6 +1045,7 @@ CompositeCollider2D:
       - {x: 2.5000293, y: -5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
 --- !u!50 &619713946
 Rigidbody2D:
   serializedVersion: 4
@@ -1253,11 +1256,13 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1001 &660595281
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 20082570}
     m_Modifications:
     - target: {fileID: 1466441821369302, guid: 573f2969d3071a44fa563048fb3422d8, type: 3}
@@ -1321,6 +1326,7 @@ PrefabInstance:
       value: 0.7924528
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 573f2969d3071a44fa563048fb3422d8, type: 3}
 --- !u!4 &660595282 stripped
 Transform:
@@ -2148,6 +2154,7 @@ CompositeCollider2D:
       - {x: -4.4999747, y: 0.49999002}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
 --- !u!50 &786080737
 Rigidbody2D:
   serializedVersion: 4
@@ -2185,6 +2192,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1 &797795771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2245,7 @@ PolygonCollider2D:
       - {x: 0.76899016, y: 0.31885457}
       - {x: 1.1161492, y: 0.3339902}
       - {x: 0.37806696, y: 0.9707053}
+  m_UseDelaunayMesh: 0
 --- !u!212 &797795773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9763,6 +9772,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!66 &1003494096
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -9967,6 +9977,7 @@ CompositeCollider2D:
       - {x: -3.999971, y: -3.5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
 --- !u!50 &1003494097
 Rigidbody2D:
   serializedVersion: 4
@@ -10087,6 +10098,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1250875300094965731, guid: b5537a5b9755cd846837ff1150eace43, type: 3}
@@ -10146,6 +10158,7 @@ PrefabInstance:
       value: 'EffectSmoke '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b5537a5b9755cd846837ff1150eace43, type: 3}
 --- !u!1 &1133983084
 GameObject:
@@ -10296,6 +10309,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 20082570}
     m_Modifications:
     - target: {fileID: 1113931569295298, guid: dd6c6c0f2cff23a488ed09ad8ab8c2dc, type: 3}
@@ -10359,6 +10373,7 @@ PrefabInstance:
       value: 0.6886792
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6c6c0f2cff23a488ed09ad8ab8c2dc, type: 3}
 --- !u!4 &1349775598 stripped
 Transform:
@@ -10370,6 +10385,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 20082570}
     m_Modifications:
     - target: {fileID: 1226778788418928, guid: 71cce0e18cda5cf41922fd12f108ed51, type: 3}
@@ -10433,6 +10449,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 71cce0e18cda5cf41922fd12f108ed51, type: 3}
 --- !u!4 &1392025529 stripped
 Transform:
@@ -10545,7 +10562,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05382967, y: 0.14130044}
+  m_Offset: {x: 0.06422448, y: 0.15169525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -10556,7 +10573,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45591927, y: 0.28260088}
+  m_Size: {x: 0.4767089, y: 0.3033905}
   m_EdgeRadius: 0
 --- !u!50 &1472746548
 Rigidbody2D:
@@ -10958,6 +10975,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2468098528583955220, guid: 053eb6a4de1dca74a88e5d398fafc7ba, type: 3}
@@ -11017,6 +11035,7 @@ PrefabInstance:
       value: EffectGlowworm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 053eb6a4de1dca74a88e5d398fafc7ba, type: 3}
 --- !u!1 &2066899358
 GameObject:
