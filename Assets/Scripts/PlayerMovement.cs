@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
             }
         } else if (IsJumpTurning)
         {
-            if (rb.velocity.y == 0)
+            if (rb.velocity.y > -0.04 && rb.velocity.y <= 0.04)
             {
                 AebleToMove = false;
                 IsJumpTurning = false;
