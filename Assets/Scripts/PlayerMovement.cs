@@ -104,12 +104,14 @@ public class PlayerMovement : MonoBehaviour
         } 
         if (IsJumping)
         {
-            if (rb.velocity.y < 0.05)
+            if (rb.velocity.y > -1 && rb.velocity.y <= 1)
             {
                 IsJumping = false;
                 IsJumpTurning = true;
                 animator.SetBool("IsJumping", IsJumping);
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
+                IsLanding = true;
+                animator.SetBool("IsLanding", IsLanding);
             }
         } else if (IsJumpTurning)
         {
