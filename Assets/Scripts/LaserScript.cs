@@ -16,7 +16,11 @@ public class LaserScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Destroy(gameObject);
+        if (hitInfo.tag != "field")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     // Update is called once per frame

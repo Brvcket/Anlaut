@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "obstacle" || collision.gameObject.tag == "enemy")
         {
             AbleToMove = false;
             animator.SetBool("IsDead", true);
