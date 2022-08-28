@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     public Transform FirePointPosition;
+    public GameObject Laser;
+
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,10 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
         if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
         else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
+        if (Input.GetKeyDown("mouse 0"))
+        {
+            Instantiate(Laser, FirePointPosition.position, FirePointPosition.rotation);
+        }
     }
     
     void OnTriggerEnter2D(Collider2D collision)
@@ -73,11 +79,8 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(-MaxSpeed, rb.velocity.y);
         }
         
-        // weaponblock
-        if (Input.GetKeyDown("f"))
-        {
-
-        }
+        
+        
 
         // movement/animation block
         if (Input.GetKey("d") && AbleToMove)

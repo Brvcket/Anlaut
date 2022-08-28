@@ -333,6 +333,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3440869345954834524, guid: 3ef9101442a34124991a19b7eef5c7b2, type: 3}
@@ -400,6 +401,7 @@ PrefabInstance:
       value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ef9101442a34124991a19b7eef5c7b2, type: 3}
 --- !u!1 &264619367
 GameObject:
@@ -1048,6 +1050,7 @@ CompositeCollider2D:
       - {x: 2.5000293, y: -5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
 --- !u!50 &619713946
 Rigidbody2D:
   serializedVersion: 4
@@ -1258,11 +1261,13 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1001 &660595281
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 20082570}
     m_Modifications:
     - target: {fileID: 1466441821369302, guid: 573f2969d3071a44fa563048fb3422d8, type: 3}
@@ -1330,6 +1335,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: f733ecca7e158e94caa3d55e6ca0deed, type: 2}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 573f2969d3071a44fa563048fb3422d8, type: 3}
 --- !u!4 &660595282 stripped
 Transform:
@@ -1681,6 +1687,7 @@ CompositeCollider2D:
       - {x: -4.499971, y: 0.5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
 --- !u!50 &786080737
 Rigidbody2D:
   serializedVersion: 4
@@ -1718,6 +1725,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1 &797795771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1778,7 @@ PolygonCollider2D:
       - {x: 0.76899016, y: 0.31885457}
       - {x: 1.1161492, y: 0.3339902}
       - {x: 0.37806696, y: 0.9707053}
+  m_UseDelaunayMesh: 0
 --- !u!212 &797795773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9296,6 +9305,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!66 &1003494096
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -9500,6 +9510,7 @@ CompositeCollider2D:
       - {x: -3.999971, y: -3.5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
 --- !u!50 &1003494097
 Rigidbody2D:
   serializedVersion: 4
@@ -9620,6 +9631,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1250875300094965731, guid: b5537a5b9755cd846837ff1150eace43, type: 3}
@@ -9679,6 +9691,7 @@ PrefabInstance:
       value: 'EffectSmoke '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b5537a5b9755cd846837ff1150eace43, type: 3}
 --- !u!1 &1133983084
 GameObject:
@@ -9923,6 +9936,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 20082570}
     m_Modifications:
     - target: {fileID: 1113931569295298, guid: dd6c6c0f2cff23a488ed09ad8ab8c2dc, type: 3}
@@ -9990,6 +10004,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: f733ecca7e158e94caa3d55e6ca0deed, type: 2}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6c6c0f2cff23a488ed09ad8ab8c2dc, type: 3}
 --- !u!4 &1349775598 stripped
 Transform:
@@ -10001,6 +10016,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 20082570}
     m_Modifications:
     - target: {fileID: 1226778788418928, guid: 71cce0e18cda5cf41922fd12f108ed51, type: 3}
@@ -10068,6 +10084,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: f733ecca7e158e94caa3d55e6ca0deed, type: 2}
     m_RemovedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4961243305158150, guid: 71cce0e18cda5cf41922fd12f108ed51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1150181515}
   m_SourcePrefab: {fileID: 100100000, guid: 71cce0e18cda5cf41922fd12f108ed51, type: 3}
 --- !u!4 &1392025529 stripped
 Transform:
@@ -10109,7 +10129,8 @@ Transform:
   m_LocalPosition: {x: -0.342, y: -0.318, z: 0.3885076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1713570550}
   m_Father: {fileID: 672472498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10248,6 +10269,8 @@ MonoBehaviour:
   Speed: 10
   JumpForce: 8
   MaxSpeed: 2.5
+  FirePointPosition: {fileID: 1713570550}
+  Laser: {fileID: 2860049128104058892, guid: 986f244cd90ad2f43b1a99b621f5316c, type: 3}
 --- !u!114 &1472746551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10400,6 +10423,37 @@ Transform:
   - {fileID: 264619368}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1713570549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713570550}
+  m_Layer: 0
+  m_Name: Eyes lasers position
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1713570550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713570549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.489, y: 0.189, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1472746545}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717845670
 GameObject:
@@ -10579,6 +10633,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2468098528583955220, guid: 053eb6a4de1dca74a88e5d398fafc7ba, type: 3}
@@ -10638,6 +10693,7 @@ PrefabInstance:
       value: EffectGlowworm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 053eb6a4de1dca74a88e5d398fafc7ba, type: 3}
 --- !u!1 &2066899358
 GameObject:
