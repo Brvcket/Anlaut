@@ -10,6 +10,7 @@ public class SkeletonScript : MonoBehaviour
     public bool KnowWhereEnemy = false;
     public Rigidbody2D player;
     public bool IsDead = false;
+    public int health = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +47,13 @@ public class SkeletonScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "bullet"){
-            IsDead = true;
-            animator.SetBool("IsDead", true);
-            GetComponent<BoxCollider2D>().enabled = false;
+            if (health == 0)
+            {
+                IsDead = true;
+                animator.SetBool("IsDead", true);
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+            else health--;
         }
     }
 }
