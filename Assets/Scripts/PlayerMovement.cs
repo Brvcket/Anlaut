@@ -85,11 +85,12 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(Speed * 10, 0), ForceMode2D.Force);
             if (LookLeft)
             {
+                animator.SetBool("IsReborn", false);
                 LookLeft = false;
                 animator.SetBool("IsLanding", IsLanding);
                 animator.SetBool("IsReborn", false);
                 transform.Rotate(new Vector3(180, 0, 180));
-                animator.SetBool("IsReborn", false);
+                
             }
         }
         if (Input.GetKey("a") && AbleToMove)
@@ -97,11 +98,12 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(-Speed * 10, 0), ForceMode2D.Force);
             if (!LookLeft)
             {
+                animator.SetBool("IsReborn", false);
                 LookLeft = true;
                 animator.SetBool("IsLanding", IsLanding);
                 animator.SetBool("IsReborn", false);
                 transform.Rotate(new Vector3(180, 0, 180));
-                animator.SetBool("IsReborn", false);
+                
             }
         }
         if (Input.GetKey("r"))
@@ -113,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (DoJump && AbleToMove)
         {
+            animator.SetBool("IsReborn", false);
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             IsJumping = true;
             IsLanding = false;
