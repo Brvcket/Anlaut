@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DoJump = Input.GetKey("space") && Mathf.Abs(rb.velocity.y) < 0.001 && !DoJump;
         if (Input.GetKeyDown("d") && !DoJump) {aud.Play();}
         else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
         if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
@@ -42,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        DoJump = Input.GetKey("space") && Mathf.Abs(rb.velocity.y) < 0.001 && !DoJump;
         if (rb.velocity.y != 0)
         {
             animator.SetBool("IsMoving", true);
