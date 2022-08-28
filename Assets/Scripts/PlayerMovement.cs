@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
         if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
         else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
-        if (Input.GetKeyDown("mouse 0"))
+        if (Input.GetKeyDown("mouse 0") && !IsDead)
         {
             Instantiate(Laser, FirePointPosition.position, FirePointPosition.rotation);
         }
@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             AbleToMove = false;
             animator.SetBool("IsDead", true);
+            IsDead = true;
         }
     }
 
@@ -112,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("r"))
         {
             animator.SetBool("IsDead", false);
+            IsDead = false;
             animator.SetBool("IsReborn", true);
             AbleToMove = true;
             rb.position = new Vector2(-4.4f, -5);
