@@ -2,18 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyDying : MonoBehaviour
 {
+
     public GameObject enemy;
     // Start is called before the first frame update
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "bullet")
-        {
-            enemy.SetActive(false);
-        }
-    }
-    
     void Start()
     {
         
@@ -23,5 +16,12 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "bullet"){
+            enemy.SetActive(false);
+        }
     }
 }
