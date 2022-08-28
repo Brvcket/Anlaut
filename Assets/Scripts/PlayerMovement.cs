@@ -38,6 +38,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
         else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
     }
+    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "obstacle")
+        {
+            animator.SetBool("IsDead", true);
+            AbleToMove = false;
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -82,18 +91,12 @@ public class PlayerMovement : MonoBehaviour
                 transform.Rotate(new Vector3(180, 0, 180));
             }
         }
-        if (Input.GetKey("k"))
-        {
-            animator.SetBool("IsDead", true);
-            animator.SetBool("IsReborn", false);
-            AbleToMove = false;
-        }
         if (Input.GetKey("r"))
         {
             animator.SetBool("IsDead", false);
             animator.SetBool("IsReborn", true);
             AbleToMove = true;
-/*            rb.position = new Vector2(-4.4f, -5);*/
+            rb.position = new Vector2(-4.4f, -5);
         }
         if (DoJump && AbleToMove)
         {
