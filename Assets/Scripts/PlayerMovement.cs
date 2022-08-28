@@ -43,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "obstacle")
         {
-            animator.SetBool("IsDead", true);
             AbleToMove = false;
+            animator.SetBool("IsDead", true);
         }
     }
 
@@ -127,7 +127,6 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
                 animator.SetBool("IsLanding", IsLanding);
                 IsLanding = false;
-                AbleToMove = true;
             }
         }
     }
