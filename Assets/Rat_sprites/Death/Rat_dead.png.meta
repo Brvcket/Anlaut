@@ -118,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rat_death_0
+      name: Rat_dead_0
       rect:
         serializedVersion: 2
         x: 15
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0799aa1348bd10a438c91912fe22bbe7
-      internalID: -1225473132
+      spriteID: 114873edcd4cb3046bcad0459892a815
+      internalID: 1807279734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat_death_1
+      name: Rat_dead_1
       rect:
         serializedVersion: 2
         x: 5
@@ -153,19 +153,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb8b5384303e27244b46af88431a26da
-      internalID: 1042497984
+      spriteID: c79dc52b6c09a2c4682e5ec5290c8770
+      internalID: -275673818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat_death_3
+      name: Rat_dead_2
       rect:
         serializedVersion: 2
         x: 8
         y: 150
-        width: 40
+        width: 41
         height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79bbca3790d2b5f4c8c3e0c56c58a347
-      internalID: -852962696
+      spriteID: 6c5a2ab47d70a954fb5c61ffb0d7da01
+      internalID: 1980829433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat_death_6
+      name: Rat_dead_3
       rect:
         serializedVersion: 2
         x: 9
@@ -195,29 +195,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bffa97da6bd115a42a4f9b0c6544ce24
-      internalID: -1232204227
+      spriteID: c91650485de5ae34083d99e03914f9b7
+      internalID: 575714226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat_death_2
+      name: Rat_dead_4
       rect:
         serializedVersion: 2
-        x: 13
+        x: 14
         y: 50
-        width: 29
+        width: 28
         height: 3
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bc10b05465f1bd45831bed4bf606200
-      internalID: 1883517046
+      spriteID: fa0371abe6d99bb4888acec61f5f98f4
+      internalID: 317526620
       vertices: []
       indices: 
       edges: []
@@ -233,13 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      rat_death_4: 1083997585
-      rat_death_2: 1883517046
-      rat_death_3: -852962696
-      rat_death_1: 1042497984
-      rat_death_5: -1474535611
-      rat_death_6: -1232204227
-      rat_death_0: -1225473132
+      Rat_dead_2: 1980829433
+      Rat_dead_5: -1361491829
+      Rat_dead_0: 1807279734
+      Rat_dead_3: 575714226
+      Rat_dead_4: 317526620
+      Rat_dead_1: -275673818
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

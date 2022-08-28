@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float Speed, JumpForce, MaxSpeed;
 
     protected bool DoJump = false, LookLeft = false;
-    protected bool IsJumping = false, IsJumpTurning = false, IsLanding = false; // For animations
+    protected bool IsJumping = false, IsJumpTurning = false, IsLanding = false, IsDead = false, IsReborn = false, AebleToMove = true; // For animations
 
     private Animator animator;
     
@@ -45,10 +45,12 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y != 0)
         {
             animator.SetBool("IsMoving", true);
+            IsLanding = false;
         }
         else
         {
             animator.SetBool("IsMoving", false);
+            IsLanding = false;
         }
         
         if (rb.velocity.x > MaxSpeed)
@@ -60,29 +62,44 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(-MaxSpeed, rb.velocity.y);
         }
         
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && AebleToMove)
         {
             rb.AddForce(new Vector2(Speed * 10, 0), ForceMode2D.Force);
             if (LookLeft)
             {
                 LookLeft = false;
+                animator.SetBool("IsLanding", IsLanding);
                 transform.Rotate(new Vector3(180, 0, 180));
             }
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a") && AebleToMove)
         {
             rb.AddForce(new Vector2(-Speed * 10, 0), ForceMode2D.Force);
             if (!LookLeft)
             {
                 LookLeft = true;
+                animator.SetBool("IsLanding", IsLanding);
                 transform.Rotate(new Vector3(180, 0, 180));
             }
+        }
+        if (Input.GetKey("k"))
+        {
+            animator.SetBool("IsDead", true);
+            animator.SetBool("IsReborn", false);
+            AebleToMove = false;
+        }
+        if (Input.GetKey("r"))
+        {
+            animator.SetBool("IsDead", false);
+            animator.SetBool("IsReborn", true);
+            AebleToMove = true;
         }
         if (DoJump)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             IsJumping = true;
             IsLanding = false;
+            animator.SetBool("IsLanding", IsLanding);
             animator.SetBool("IsJumping", IsJumping);
         } 
         if (IsJumping)
@@ -96,12 +113,15 @@ public class PlayerMovement : MonoBehaviour
             }
         } else if (IsJumpTurning)
         {
-            if (rb.velocity.y > -0.02)
+            if (rb.velocity.y == 0)
             {
+                AebleToMove = false;
                 IsJumpTurning = false;
                 IsLanding = true;
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
                 animator.SetBool("IsLanding", IsLanding);
+                IsLanding = false;
+                AebleToMove = true;
             }
         }
     }
