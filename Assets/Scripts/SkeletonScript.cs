@@ -7,7 +7,7 @@ public class SkeletonScript : MonoBehaviour
 
     public GameObject enemy;
     public Animator animator;
-    public bool KnowWhereEnemy = false;
+    public bool KnowWhereEnemy = false, LookLeft = false;
     public Rigidbody2D player;
     public bool IsDead = false;
     public int health = 7;
@@ -22,23 +22,32 @@ public class SkeletonScript : MonoBehaviour
     {
         if (!IsDead)
         {
-            if (KnowWhereEnemy)
+            if (KnowWhereEnemy) {
+                animator.SetBool("IsKnowWhereRat", true);
+                if (enemy.transform.position.x > player.transform.position.x + 0.6)
+                {
+                    if (LookLeft)
                     {
-                        animator.SetBool("IsKnowWhereRat", true);
-                        if (enemy.transform.position.x > player.transform.position.x + 0.6)
-                        {
-                            enemy.transform.position = new Vector3(enemy.transform.position.x - 0.02f, enemy.transform.position.y);
-                        } else if (enemy.transform.position.x < player.transform.position.x - 0.6)
-                        {
-                            enemy.transform.position = new Vector3(enemy.transform.position.x + 0.02f, enemy.transform.position.y);
-                        } else
-                        {
-                            animator.SetBool("IsReachRat", true);
-                        }
-                    } else
-                    {
-                        animator.SetBool("IsKnowWhereRat", false);
+                        LookLeft = false;
+                        transform.Rotate(new Vector3(180, 0, 180));
                     }
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.02f, enemy.transform.position.y);
+                } else if (enemy.transform.position.x < player.transform.position.x - 0.6)
+                {
+                    if (!LookLeft)
+                    {
+                        LookLeft = true;
+                        transform.Rotate(new Vector3(180, 0, 180));
+                    }
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.02f, enemy.transform.position.y);
+                } else
+                {
+                    animator.SetBool("IsReachRat", true);
+                }
+            } else
+            {
+                animator.SetBool("IsKnowWhereRat", false);
+            }
         }
         
     }

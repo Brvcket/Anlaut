@@ -10,7 +10,7 @@ public class CrowScript : MonoBehaviour
     public Animator animator;
     public bool KnowWhereEnemy = false;
     public Rigidbody2D player;
-    public bool IsDead = false, SameX = false, SameY = false;
+    public bool IsDead = false, SameX = false, SameY = false, LookLeft = false;
     public int health = 4;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class CrowScript : MonoBehaviour
                     enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y - 0.05f);
                     SameY = false;
                 }
-                else if (enemy.transform.position.y < player.transform.position.y - 0.3)
+                else if (enemy.transform.position.y < player.transform.position.y)
                 {
                     enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 0.05f);
                     SameY = false;
@@ -38,10 +38,20 @@ public class CrowScript : MonoBehaviour
                 else SameY = true;
                 if (enemy.transform.position.x > player.transform.position.x + 0.3)
                 {
+                    if (!LookLeft)
+                    {
+                        LookLeft = true;
+                        transform.Rotate(new Vector3(180, 0, 180));
+                    }  
                     enemy.transform.position = new Vector3(enemy.transform.position.x - 0.03f, enemy.transform.position.y);
                     SameX = false;
                 } else if (enemy.transform.position.x < player.transform.position.x - 0.3)
                 {
+                    if (LookLeft)
+                    {
+                        LookLeft = false;
+                        transform.Rotate(new Vector3(180, 0, 180));
+                    }
                     enemy.transform.position = new Vector3(enemy.transform.position.x + 0.03f, enemy.transform.position.y);
                     SameX = false;
                 } else SameX = true;

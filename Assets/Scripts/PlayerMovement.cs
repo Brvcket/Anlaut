@@ -92,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("IsReborn", false);
                 LookLeft = false;
                 animator.SetBool("IsLanding", IsLanding);
-                animator.SetBool("IsReborn", false);
                 transform.Rotate(new Vector3(180, 0, 180));
                 
             }
@@ -105,7 +104,6 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("IsReborn", false);
                 LookLeft = true;
                 animator.SetBool("IsLanding", IsLanding);
-                animator.SetBool("IsReborn", false);
                 transform.Rotate(new Vector3(180, 0, 180));
                 
             }
