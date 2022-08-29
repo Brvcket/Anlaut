@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     
     public int MutAmount = 0;
     public float Speed = 8, JumpForce = 10, MaxSpeed = 2.5f;
+    public float StartX, StartY;
 
     protected bool DoJump = false, LookLeft = false;
     public bool IsJumping = false, IsJumpTurning = false, IsLanding = false, IsDead = false, IsReborn = false, AbleToMove = true; // For animations
@@ -125,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
                 IsDead = false;
                 animator.SetBool("IsReborn", true);
                 AbleToMove = true;
-                rb.position = new Vector2(-4.4f, -5);
+                rb.position = new Vector2(StartX, StartY);
                 MutAmount = 0;
             }
         }

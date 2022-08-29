@@ -12,6 +12,7 @@ public class CrowScript : MonoBehaviour
     public Rigidbody2D player;
     public bool IsDead = false, SameX = false, SameY = false, LookLeft = false;
     public int health = 4;
+    public float StartX, StartY;
     // Start is called before the first frame update
     void Start()
     {

@@ -12,6 +12,7 @@ public class IceGolemScript : MonoBehaviour
     public Rigidbody2D golem;
     public bool IsDead = false, SameX = false, LookLeft = false;
     public int health = 20;
+    public float StartX, StartY;
     // Start is called before the first frame update
     void Start()
     {
