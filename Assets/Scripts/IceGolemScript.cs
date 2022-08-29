@@ -11,6 +11,7 @@ public class IceGolemScript : MonoBehaviour
     public Rigidbody2D player;
     public Rigidbody2D golem;
     public bool IsDead = false, SameX = false, LookLeft = false;
+    protected bool DoJump = false;
     public int health = 20;
     protected int MaxHealth;
     protected float StartX, StartY;
@@ -25,6 +26,7 @@ public class IceGolemScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        DoJump =  Mathf.Abs(golem.velocity.y) < 0.01 && !DoJump;
         if (playerMovement.IsReborn)
         {
             enemy.transform.position = new Vector3(StartX, StartY);
@@ -39,7 +41,7 @@ public class IceGolemScript : MonoBehaviour
             animator.SetBool("IsDead", false);
             if (KnowWhereEnemy)
             {
-                if (Mathf.Abs(golem.velocity.y) < 0.01) golem.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
+                if (DoJump) golem.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
                 animator.SetBool("IsKnowWhereRat", true);
                 if (enemy.transform.position.x > player.transform.position.x + 0.6)
                 {
