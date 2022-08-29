@@ -11,6 +11,7 @@ public class SkeletonScript : MonoBehaviour
     public Rigidbody2D player;
     public bool IsDead = false;
     public int health = 7;
+    public float StartX, StartY;
     // Start is called before the first frame update
     void Start()
     {
