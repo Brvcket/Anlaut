@@ -9734,6 +9734,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1472746548}
+    - target: {fileID: 2804207396192253296, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1472746550}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
 --- !u!1 &1133983084
@@ -10792,11 +10796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2804207394980329921, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
       propertyPath: m_Size.x
-      value: 5.9154177
+      value: 6.0029793
       objectReference: {fileID: 0}
     - target: {fileID: 2804207394980329921, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
       propertyPath: m_Offset.x
-      value: -0.2926035
+      value: -0.33638418
       objectReference: {fileID: 0}
     - target: {fileID: 2804207394980329921, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
       propertyPath: m_Offset.y
@@ -10854,6 +10858,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1472746548}
+    - target: {fileID: 2804207396192253296, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1472746550}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
 --- !u!1001 &6103149742369589115
