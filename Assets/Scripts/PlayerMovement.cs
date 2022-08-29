@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
         if (Input.GetKeyDown("mouse 0") && !IsDead)
         {
-            for (int i = 0; i < MutAmount; i++)
+            for (int i = 0; i < MutAmount + 1; i++)
             {
                 Instantiate(Laser, FirePointPosition.position, FirePointPosition.rotation);
             } 

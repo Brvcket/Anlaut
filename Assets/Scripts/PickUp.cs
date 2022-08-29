@@ -22,19 +22,9 @@ public class PickUp : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             playerMovement.MutAmount++;
         }
-<<<<<<< HEAD
-=======
         else
         {
             CanPickUp = false;
         }
-    }
-    
-    void FixedUpdate() {
-        if (CanPickUp && Input.GetKey("e"))
-        {
-            Destroy(GameObject.Find("greenPotion"));
-        }    
->>>>>>> e8840368ee718df9fe51a51f5aa1a3b5026d4e37
-    }
+    }  
 }

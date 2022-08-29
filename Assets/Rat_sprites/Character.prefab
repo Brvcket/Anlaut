@@ -172,9 +172,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6103149740998562639}
+  MutAmount: 0
   Speed: 10
   JumpForce: 8
   MaxSpeed: 2.5
+  IsJumping: 0
+  IsJumpTurning: 0
+  IsLanding: 0
+  IsDead: 0
+  IsReborn: 0
+  AbleToMove: 1
   FirePointPosition: {fileID: 6103149741797262733}
   Laser: {fileID: 2860049128104058892, guid: 986f244cd90ad2f43b1a99b621f5316c, type: 3}
 --- !u!114 &6103149740998562627
@@ -189,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84837dafba531b048b3dbb3140dc4e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
 --- !u!114 &6103149740998562636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +347,7 @@ GameObject:
   - component: {fileID: 6103149743039437513}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
