@@ -16,7 +16,7 @@ public class LaserScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag != "field")
+        if (hitInfo.tag != "field" && hitInfo.tag != "bullet")
         {
             Destroy(gameObject);
         }

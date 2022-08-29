@@ -5,22 +5,22 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     protected bool CanPickUp = false;
+    public PlayerMovement playerMovement;
 
-    void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "pickup")
+    private void FixedUpdate()
+    {
+        if (playerMovement.IsDead)
         {
-            CanPickUp = true;
-        }
-        else
-        {
-            CanPickUp = false;
+            GetComponent<BoxCollider2D>().enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
         }
     }
-    
-    void FixedUpdate(){
-        if (CanPickUp && Input.GetKey("e"))
-        {
-            Destroy(GameObject.Find("greenPotion"));
-        }    
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "Player") {
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            playerMovement.MutAmount++;
+        }
     }
 }

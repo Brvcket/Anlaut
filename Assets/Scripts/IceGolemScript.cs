@@ -65,6 +65,7 @@ public class IceGolemScript : MonoBehaviour
                 IsDead = true;
                 animator.SetBool("IsDead", true);
                 GetComponent<BoxCollider2D>().enabled = false;
+                gameObject.transform.position = new Vector3(-100, -100);
             }
             else health--;
         }
