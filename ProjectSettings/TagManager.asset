@@ -8,6 +8,10 @@ TagManager:
   - ladder
   - table
   - obstacle
+  - trigger
+  - player
+  - bullet
+  - enemy
   layers:
   - Default
   - TransparentFX
