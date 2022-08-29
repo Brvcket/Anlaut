@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour
         }
     }
     
-    void FixedUpdate(){
+    void FixedUpdate() {
         if (CanPickUp && Input.GetKey("e"))
         {
             Destroy(GameObject.Find("greenPotion"));
