@@ -28,7 +28,6 @@ public class SkeletonScript : MonoBehaviour
                         if (enemy.transform.position.x > player.transform.position.x + 0.6)
                         {
                             enemy.transform.position = new Vector3(enemy.transform.position.x - 0.02f, enemy.transform.position.y);
-                            enemy.transform.rotation.Set(180, 90, 180, 0);
                         } else if (enemy.transform.position.x < player.transform.position.x - 0.6)
                         {
                             enemy.transform.position = new Vector3(enemy.transform.position.x + 0.02f, enemy.transform.position.y);

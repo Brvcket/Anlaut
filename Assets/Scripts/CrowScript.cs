@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class CrowScript : MonoBehaviour
 {
+
+    public GameObject enemy;
+    public GameObject StartPosition;
+    public Animator animator;
+    public bool KnowWhereEnemy = false;
+    public Rigidbody2D player;
+    public bool IsDead = false, SameX = false, SameY = false;
+    public int health = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +19,72 @@ public class CrowScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (!IsDead)
+        {
+            if (KnowWhereEnemy)
+            {
+                if (enemy.transform.position.y > player.transform.position.y + 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y - 0.05f);
+                    SameY = false;
+                }
+                else if (enemy.transform.position.y < player.transform.position.y - 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 0.05f);
+                    SameY = false;
+                }
+                else SameY = true;
+                if (enemy.transform.position.x > player.transform.position.x + 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.03f, enemy.transform.position.y);
+                    SameX = false;
+                } else if (enemy.transform.position.x < player.transform.position.x - 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.03f, enemy.transform.position.y);
+                    SameX = false;
+                } else SameX = true;
+                if (SameY && SameX)
+                {
+                    animator.SetBool("IsReachRat", true);
+                } else animator.SetBool("IsReachRat", false);
+            } else
+            {
+                animator.SetBool("IsReachRat", false);
+                if (enemy.transform.position.y > StartPosition.transform.position.y + 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y - 0.05f);
+                }
+                else if (enemy.transform.position.y < StartPosition.transform.position.y - 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 0.05f);
+                }
+                else SameY = true;
+                if (enemy.transform.position.x > StartPosition.transform.position.x + 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.03f, enemy.transform.position.y);
+                }
+                else if (enemy.transform.position.x < StartPosition.transform.position.x - 0.3)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.03f, enemy.transform.position.y);
+                }
+                else SameX = true;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "bullet")
+        {
+            if (health == 0)
+            {
+                IsDead = true;
+                animator.SetBool("IsDead", true);
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+            else health--;
+        }
     }
 }
