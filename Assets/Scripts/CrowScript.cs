@@ -12,11 +12,12 @@ public class CrowScript : MonoBehaviour
     public Rigidbody2D player;
     public bool IsDead = false, SameX = false, SameY = false, LookLeft = false;
     public int health = 4;
-    public float StartX, StartY;
+    protected float StartX, StartY;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartX = enemy.transform.position.x;
+        StartY = enemy.transform.position.y;
     }
 
     // Update is called once per frame
@@ -81,6 +82,17 @@ public class CrowScript : MonoBehaviour
                     enemy.transform.position = new Vector3(enemy.transform.position.x + 0.03f, enemy.transform.position.y);
                 }
                 else SameX = true;
+            }
+        }
+        else
+        {
+            if (playerMovement.IsReborn)
+            {
+                enemy.transform.position = new Vector3(StartX, StartY);
+                animator.SetBool("RatReborn", true);
+                IsDead = false;
+                animator.SetBool("IsDead", false);
+                GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }

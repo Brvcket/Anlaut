@@ -11,11 +11,12 @@ public class SkeletonScript : MonoBehaviour
     public Rigidbody2D player;
     public bool IsDead = false;
     public int health = 7;
-    public float StartX, StartY;
+    protected float StartX, StartY;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartX = enemy.transform.position.x;
+        StartY = enemy.transform.position.y; 
     }
 
     // Update is called once per frame
@@ -50,7 +51,18 @@ public class SkeletonScript : MonoBehaviour
                 animator.SetBool("IsKnowWhereRat", false);
             }
         }
-        
+        else
+        {
+            if (playerMovement.IsReborn)
+            {
+                enemy.transform.position = new Vector3(StartX, StartY); 
+                animator.SetBool("RatReborn", true);
+                IsDead = false;
+                animator.SetBool("IsDead", false);
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

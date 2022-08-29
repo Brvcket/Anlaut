@@ -9855,6 +9855,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1472746548}
+    - target: {fileID: 2804207396192253296, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1472746550}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
@@ -11035,6 +11039,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 660595056657818636, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2804207395788057842, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -11084,9 +11092,17 @@ PrefabInstance:
       value: Skeleton enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2804207396192253296, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
+      propertyPath: StartX
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804207396192253296, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1472746548}
+    - target: {fileID: 2804207396192253296, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1472746550}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2a3a2e6473c5645a363bd2a10285f3, type: 3}
@@ -11098,6 +11114,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6103149740998562637, guid: f71a6592c8c956e418b2ede7b233e63c, type: 3}
+      propertyPath: StartX
+      value: -4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103149740998562637, guid: f71a6592c8c956e418b2ede7b233e63c, type: 3}
+      propertyPath: StartY
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 6103149743039437513, guid: f71a6592c8c956e418b2ede7b233e63c, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -11162,6 +11186,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1472746548}
+    - target: {fileID: 8901480234651663206, guid: 6524caec554dbb149a1ebb0ae21a4343, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1472746550}
     - target: {fileID: 8901480235548508166, guid: 6524caec554dbb149a1ebb0ae21a4343, type: 3}
       propertyPath: m_RootOrder
       value: 15
