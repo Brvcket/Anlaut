@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         // movement/animation block
         if (Input.GetKey("d") && AbleToMove)
         {
+            IsReborn = false;
             rb.AddForce(new Vector2(Speed * 10, 0), ForceMode2D.Force);
             if (LookLeft)
             {
@@ -98,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey("a") && AbleToMove)
         {
+            IsReborn = false;
             rb.AddForce(new Vector2(-Speed * 10, 0), ForceMode2D.Force);
             if (!LookLeft)
             {
@@ -110,14 +112,19 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey("r"))
         {
-            animator.SetBool("IsDead", false);
-            IsDead = false;
-            animator.SetBool("IsReborn", true);
-            AbleToMove = true;
-            rb.position = new Vector2(-4.4f, -5);
+            if (IsDead)
+            {
+                IsReborn = true;
+                animator.SetBool("IsDead", false);
+                IsDead = false;
+                animator.SetBool("IsReborn", true);
+                AbleToMove = true;
+                rb.position = new Vector2(-4.4f, -5);
+            }
         }
         if (DoJump && AbleToMove)
         {
+            IsReborn = false;
             animator.SetBool("IsReborn", false);
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             IsJumping = true;

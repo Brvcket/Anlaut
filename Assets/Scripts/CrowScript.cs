@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CrowScript : MonoBehaviour
 {
-
+    public PlayerMovement playerMovement;
     public GameObject enemy;
     public GameObject StartPosition;
     public Animator animator;
