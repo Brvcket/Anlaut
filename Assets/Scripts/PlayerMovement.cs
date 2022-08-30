@@ -130,13 +130,14 @@ public class PlayerMovement : MonoBehaviour
         }
         if (DoJump && AbleToMove)
         {
+            IsJumping = true;
+            animator.SetBool("IsJumping", IsJumping);
             MustLand = true;
             IsReborn = false;
             animator.SetBool("IsReborn", false);
             rb.AddForce(new Vector2(0, JumpForce + MutAmount * 0.5f), ForceMode2D.Impulse);
-            IsJumping = true;
+            
             animator.SetBool("IsLanding", false);
-            animator.SetBool("IsJumping", IsJumping);
         } 
         if (IsJumping)
         {

@@ -21,14 +21,15 @@ public class RatLandingField : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "enemy" && collision.tag != "pickup")
+        if (collision.tag != "enemy" && collision.tag != "pickup" && collision.tag != "field")
         {
             playerMovement.GetAnimator().SetBool("IsJumpTurning", false);
             if (playerMovement.MustLand)
             {
                 playerMovement.GetAnimator().SetBool("IsLanding", true);
-                playerMovement.MustLand = false;
-            } else
+                //playerMovement.MustLand = false;
+            }
+            else
             {
                 playerMovement.GetAnimator().SetBool("IsLanding", false);
             }
