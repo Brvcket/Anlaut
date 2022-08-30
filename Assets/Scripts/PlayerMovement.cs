@@ -150,19 +150,12 @@ public class PlayerMovement : MonoBehaviour
                 IsJumpTurning = true;
                 animator.SetBool("IsJumping", IsJumping);
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
-                IsLanding = true;
-                animator.SetBool("IsLanding", IsLanding);
             }
-        } else if (IsJumpTurning)
-        {
-            if (rb.velocity.y > -0.04 && rb.velocity.y <= 0.04)
-            {
-                IsJumpTurning = false;
-                IsLanding = true;
-                animator.SetBool("IsJumpTurning", IsJumpTurning);
-                animator.SetBool("IsLanding", IsLanding);
-                IsLanding = false;
-            }
-        }
+        } 
+    }
+
+    public Animator GetAnimator()
+    {
+        return animator;
     }
 }
