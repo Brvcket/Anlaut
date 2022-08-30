@@ -31,9 +31,10 @@ Transform:
   m_LocalPosition: {x: -1.8399806, y: -0.016835928, z: -1.8451589}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8901480235310101753}
   m_Father: {fileID: 8901480235548508166}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4005232384853914086
 SpriteRenderer:
@@ -145,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa09e27e4ae149468f35290fd6430c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
   enemy: {fileID: 4005232384853914084}
   StartPosition: {fileID: 8901480234975740370}
   animator: {fileID: 4005232384853914087}
@@ -153,6 +155,7 @@ MonoBehaviour:
   IsDead: 0
   SameX: 0
   SameY: 0
+  LookLeft: 0
   health: 4
 --- !u!1 &8901480234975740370
 GameObject:
@@ -183,7 +186,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8901480235548508166}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8901480235310101758
 GameObject:
@@ -210,13 +213,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8901480235310101758}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.1332684, y: 0.05611976, z: 6.15053}
+  m_LocalScale: {x: 3.3333333, y: 3.3333333, z: 3.3333333}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8901480235548508166}
-  m_RootOrder: -1
+  m_Father: {fileID: 4005232384853914073}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8901480235310101752
 BoxCollider2D:
@@ -286,8 +289,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4005232384853914073}
-  - {fileID: 8901480235310101753}
   - {fileID: 8901480234975740397}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
