@@ -23,9 +23,9 @@ public class RatLandingField : MonoBehaviour
     {
         if (collision.tag != "enemy" && collision.tag != "pickup")
         {
+            playerMovement.GetAnimator().SetBool("IsJumpTurning", false);
             if (playerMovement.MustLand)
             {
-                playerMovement.GetAnimator().SetBool("IsJumpTurning", false);
                 playerMovement.GetAnimator().SetBool("IsLanding", true);
                 playerMovement.MustLand = false;
             } else
