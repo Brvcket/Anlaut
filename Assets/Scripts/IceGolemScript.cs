@@ -50,7 +50,7 @@ public class IceGolemScript : MonoBehaviour
                         LookLeft = false;
                         transform.Rotate(new Vector3(180, 0, 180));
                     }
-                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.02f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.017f, enemy.transform.position.y);
                 }
                 else if (enemy.transform.position.x < player.transform.position.x - 0.6)
                 {
@@ -59,7 +59,7 @@ public class IceGolemScript : MonoBehaviour
                         LookLeft = true;
                         transform.Rotate(new Vector3(180, 0, 180));
                     }
-                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.02f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.017f, enemy.transform.position.y);
                 }
                 else
                 {
