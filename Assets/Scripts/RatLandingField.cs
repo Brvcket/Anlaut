@@ -6,6 +6,7 @@ public class RatLandingField : MonoBehaviour
 {
 
     public PlayerMovement playerMovement;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,11 @@ public class RatLandingField : MonoBehaviour
     {
         if (collision.tag != "enemy" && collision.tag != "pickup")
         {
-            if (playerMovement.IsJumpTurning)
+            if (playerMovement.MustLand)
             {
                 playerMovement.GetAnimator().SetBool("IsJumpTurning", false);
                 playerMovement.GetAnimator().SetBool("IsLanding", true);
-                playerMovement.IsJumpTurning = false;
+                playerMovement.MustLand = false;
             } else
             {
                 playerMovement.GetAnimator().SetBool("IsLanding", false);

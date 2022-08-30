@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     protected float StartX, StartY;
 
     protected bool DoJump = false, LookLeft = false;
-    public bool IsJumping = false, IsJumpTurning = false, IsLanding = false, IsDead = false, IsReborn = false, AbleToMove = true; // For animations
+    public bool IsJumping = false, IsJumpTurning = false, IsDead = false, IsReborn = false, AbleToMove = true, MustLand = false; // For animations
 
     private Animator animator;
 
@@ -72,12 +72,10 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y != 0)
         {
             animator.SetBool("IsMoving", true);
-            IsLanding = false;
         }
         else
         {
             animator.SetBool("IsMoving", false);
-            IsLanding = false;
         }
         
         if (rb.velocity.x > MaxSpeed)
@@ -101,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("IsReborn", false);
                 LookLeft = false;
-                animator.SetBool("IsLanding", IsLanding);
+                animator.SetBool("IsLanding", false);
                 transform.Rotate(new Vector3(180, 0, 180));
                 
             }
@@ -114,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("IsReborn", false);
                 LookLeft = true;
-                animator.SetBool("IsLanding", IsLanding);
+                animator.SetBool("IsLanding", false);
                 transform.Rotate(new Vector3(180, 0, 180));
                 
             }
@@ -134,12 +132,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (DoJump && AbleToMove)
         {
+            MustLand = true;
             IsReborn = false;
             animator.SetBool("IsReborn", false);
             rb.AddForce(new Vector2(0, JumpForce + MutAmount * 0.5f), ForceMode2D.Impulse);
             IsJumping = true;
-            IsLanding = false;
-            animator.SetBool("IsLanding", IsLanding);
+            animator.SetBool("IsLanding", false);
             animator.SetBool("IsJumping", IsJumping);
         } 
         if (IsJumping)
