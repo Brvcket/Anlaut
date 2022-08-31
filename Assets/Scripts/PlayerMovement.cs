@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    private AudioSource aud;
+    public AudioSource aud;
+    public AudioSource deathaudio;
 
     
     public int MutAmount = 0;
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        aud = GetComponent<AudioSource>();
+        deathaudio.Stop();
         aud.Stop();
         StartX = gameObject.transform.position.x;
         StartY = gameObject.transform.position.y;
@@ -47,16 +48,19 @@ public class PlayerMovement : MonoBehaviour
             MaxSpeed = 2.5f + MutAmount * 0.2f;
         }
         else MaxSpeed = 2;
-        if (Input.GetKeyDown("d") && !DoJump) {aud.Play();}
-        else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
-        if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
-        else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
-        if (Input.GetKeyDown("mouse 0") || Input.GetKeyDown("x") && !IsDead)
+        if (!IsDead)
         {
-            for (int i = 0; i < MutAmount + 1; i++)
+            if (Input.GetKeyDown("d") && !DoJump) {aud.Play();}
+            else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
+            if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
+            else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
+            if (Input.GetKeyDown("mouse 0") || Input.GetKeyDown("x") && !IsDead)
             {
-                Instantiate(Laser, FirePointPosition.position, FirePointPosition.rotation);
-            } 
+                for (int i = 0; i < MutAmount + 1; i++)
+                {
+                    Instantiate(Laser, FirePointPosition.position, FirePointPosition.rotation);
+                } 
+            }
         }
     }
     
@@ -69,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
                 AbleToMove = false;
                 animator.SetBool("IsDead", true);
                 IsDead = true;
+                deathaudio.Play();
             }
         }
     }
@@ -152,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
             MustLand = true;
             IsReborn = false;
             animator.SetBool("IsReborn", false);
-            rb.AddForce(new Vector2(0, JumpForce + MutAmount * 0.5f), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, JumpForce + MutAmount * 0.7f), ForceMode2D.Impulse);
             
             animator.SetBool("IsLanding", false);
         } 
