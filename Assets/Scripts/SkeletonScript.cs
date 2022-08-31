@@ -45,7 +45,7 @@ public class SkeletonScript : MonoBehaviour
                         LookLeft = false;
                         transform.Rotate(new Vector3(180, 0, 180));
                     }
-                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.05f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.025f, enemy.transform.position.y);
                 } else if (enemy.transform.position.x < player.transform.position.x - 0.6)
                 {
                     if (!LookLeft)
@@ -53,7 +53,7 @@ public class SkeletonScript : MonoBehaviour
                         LookLeft = true;
                         transform.Rotate(new Vector3(180, 0, 180));
                     }
-                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.05f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.025f, enemy.transform.position.y);
                 } else
                 {
                     animator.SetBool("IsReachRat", true);
