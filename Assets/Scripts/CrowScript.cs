@@ -104,7 +104,7 @@ public class CrowScript : MonoBehaviour
         {
             if (LookLeft)
             {
-                if (animator.GetBool("IsKnowWhereRat"))
+                if (KnowWhereEnemy)
                 {
                     enemy.transform.position = new Vector3(enemy.transform.position.x - 0.3f, enemy.transform.position.y);
                 }
@@ -112,7 +112,7 @@ public class CrowScript : MonoBehaviour
             }
             else
             {
-                if (animator.GetBool("IsKnowWhereRat"))
+                if (KnowWhereEnemy)
                 {
                     enemy.transform.position = new Vector3(enemy.transform.position.x + 0.3f, enemy.transform.position.y);
                 }
