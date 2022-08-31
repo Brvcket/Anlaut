@@ -106,7 +106,7 @@ public class CrowScript : MonoBehaviour
             {
                 if (KnowWhereEnemy)
                 {
-                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.3f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.2f, enemy.transform.position.y);
                 }
                 else enemy.transform.position = new Vector3(enemy.transform.position.x - 0.15f, enemy.transform.position.y);
             }
@@ -114,7 +114,7 @@ public class CrowScript : MonoBehaviour
             {
                 if (KnowWhereEnemy)
                 {
-                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.3f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.2f, enemy.transform.position.y);
                 }
                 else enemy.transform.position = new Vector3(enemy.transform.position.x + 0.15f, enemy.transform.position.y);
             }
