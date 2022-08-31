@@ -40,6 +40,7 @@ public class SkeletonScript : MonoBehaviour
                 animator.SetBool("IsKnowWhereRat", true);
                 if (enemy.transform.position.x > player.transform.position.x + 0.6)
                 {
+                    animator.SetBool("IsReachRat", false);
                     if (LookLeft)
                     {
                         LookLeft = false;
@@ -48,6 +49,7 @@ public class SkeletonScript : MonoBehaviour
                     enemy.transform.position = new Vector3(enemy.transform.position.x - 0.025f, enemy.transform.position.y);
                 } else if (enemy.transform.position.x < player.transform.position.x - 0.6)
                 {
+                    animator.SetBool("IsReachRat", false);
                     if (!LookLeft)
                     {
                         LookLeft = true;
