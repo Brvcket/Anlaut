@@ -73,14 +73,14 @@ public class SkeletonScript : MonoBehaviour
             {
                 if (animator.GetBool("IsKnowWhereRat"))
                 {
-                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.3f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.2f, enemy.transform.position.y);
                 }
                 else enemy.transform.position = new Vector3(enemy.transform.position.x - 0.15f, enemy.transform.position.y);
             } else
             {
                 if (animator.GetBool("IsKnowWhereRat"))
                 {
-                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.3f, enemy.transform.position.y);
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.2f, enemy.transform.position.y);
                 }
                 else enemy.transform.position = new Vector3(enemy.transform.position.x + 0.15f, enemy.transform.position.y);
             }
