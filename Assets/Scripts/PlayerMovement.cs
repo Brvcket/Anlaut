@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     protected float StartX, StartY;
 
     protected bool DoJump = false, LookLeft = false;
-    public bool IsJumping = false, IsJumpTurning = false, IsDead = false, IsReborn = false, AbleToMove = true, MustLand = false; // For animations
+    public bool IsJumping = false, IsJumpTurning = false, IsDead = false, IsReborn = false, AbleToMove = true, MustLand = false, NowGiga = false; // For animations
 
     private Animator animator;
 
@@ -42,7 +42,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MaxSpeed = 2.5f + MutAmount * 0.2f;
+        if (!NowGiga)
+        {
+            MaxSpeed = 2.5f + MutAmount * 0.2f;
+        }
+        else MaxSpeed = 2;
         if (Input.GetKeyDown("d") && !DoJump) {aud.Play();}
         else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
         if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
@@ -58,16 +62,28 @@ public class PlayerMovement : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "obstacle" || collision.gameObject.tag == "enemy")
+        if (!NowGiga)
         {
-            AbleToMove = false;
-            animator.SetBool("IsDead", true);
-            IsDead = true;
+            if (collision.gameObject.tag == "obstacle" || collision.gameObject.tag == "enemy")
+            {
+                AbleToMove = false;
+                animator.SetBool("IsDead", true);
+                IsDead = true;
+            }
         }
     }
 
     private void FixedUpdate()
     {
+        if (NowGiga)
+        {
+            if (animator.GetBool("WasNotGiga") && animator.GetBool("NowGiga"))
+            {
+                animator.SetBool("WasNotGiga", false);
+            }
+            
+        }
+
         DoJump = Input.GetKey("space") && Mathf.Abs(rb.velocity.y) < 0.001 && !DoJump;
         if (rb.velocity.y != 0)
         {
@@ -148,7 +164,12 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("IsJumping", IsJumping);
                 animator.SetBool("IsJumpTurning", IsJumpTurning);
             }
-        } 
+        }
+        if (MutAmount == 3 && Input.GetKey("g"))
+        {
+            animator.SetBool("NowGiga", true);
+            NowGiga = true;
+        }
     }
 
     public Animator GetAnimator()
