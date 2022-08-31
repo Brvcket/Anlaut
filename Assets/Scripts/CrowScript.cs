@@ -102,6 +102,22 @@ public class CrowScript : MonoBehaviour
     {
         if (collision.tag == "bullet")
         {
+            if (LookLeft)
+            {
+                if (KnowWhereEnemy)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.3f, enemy.transform.position.y);
+                }
+                else enemy.transform.position = new Vector3(enemy.transform.position.x - 0.15f, enemy.transform.position.y);
+            }
+            else
+            {
+                if (KnowWhereEnemy)
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.3f, enemy.transform.position.y);
+                }
+                else enemy.transform.position = new Vector3(enemy.transform.position.x + 0.15f, enemy.transform.position.y);
+            }
             if (health == 0)
             {
                 IsDead = true;

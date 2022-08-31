@@ -69,6 +69,21 @@ public class SkeletonScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "bullet"){
+            if (LookLeft)
+            {
+                if (animator.GetBool("IsKnowWhereRat"))
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x - 0.3f, enemy.transform.position.y);
+                }
+                else enemy.transform.position = new Vector3(enemy.transform.position.x - 0.15f, enemy.transform.position.y);
+            } else
+            {
+                if (animator.GetBool("IsKnowWhereRat"))
+                {
+                    enemy.transform.position = new Vector3(enemy.transform.position.x + 0.3f, enemy.transform.position.y);
+                }
+                else enemy.transform.position = new Vector3(enemy.transform.position.x + 0.15f, enemy.transform.position.y);
+            }
             if (health == 0)
             {
                 IsDead = true;
