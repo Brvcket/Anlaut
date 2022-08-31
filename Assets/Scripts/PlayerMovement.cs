@@ -85,14 +85,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         DoJump = Input.GetKey("space") && Mathf.Abs(rb.velocity.y) < 0.001 && !DoJump;
-        if (rb.velocity.y != 0)
-        {
-            animator.SetBool("IsMoving", true);
-        }
-        else
-        {
-            animator.SetBool("IsMoving", false);
-        }
+        
         
         if (rb.velocity.x > MaxSpeed)
         {
@@ -102,11 +95,19 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(-MaxSpeed, rb.velocity.y);
         }
-        
-        
-        
+
+
+
 
         // movement/animation block
+        if (Math.Abs(rb.velocity.x) > 0.000001)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
         if (Input.GetKey("d") && AbleToMove)
         {
             IsReborn = false;
