@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp("d") || DoJump) {aud.Stop();}
         if (Input.GetKeyDown("a") && !DoJump) {aud.Play();}
         else if (Input.GetKeyUp("a") || DoJump) {aud.Stop();}
-        if (Input.GetKeyDown("mouse 0") && !IsDead)
+        if (Input.GetKeyDown("mouse 0") || Input.GetKeyDown("x") && !IsDead)
         {
             for (int i = 0; i < MutAmount + 1; i++)
             {
